@@ -19,8 +19,6 @@ func Serve(notifyChan chan struct{}, quitChan chan os.Signal) {
 
 		notifyChan <- struct{}{}
 		close(notifyChan)
-
-		quitChan <- os.Interrupt
 	})
 
 	server := &http.Server{
